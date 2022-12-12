@@ -4,11 +4,11 @@ const taskList = document.querySelector('#tasks');
 const taskCounter = document.querySelector('#task-counter');
 
 let tasksArray = [];
-checkEmptyList() 
 
 if (localStorage.getItem('tasksArray')) {
     tasksArray = JSON.parse(localStorage.getItem('tasksArray'))
 }
+checkEmptyList() 
 
 tasksArray.forEach(function (task) {
     const addingClass = task.done ? "main-todo-list__task main-todo-list__task_done" : "main-todo-list__task";
