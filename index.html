@@ -83,7 +83,19 @@
     </section>
     <section class="main-todo-list">
         <div class="main-todo-list__container">
-            <div class="main-todo-list__tasks-list" id="tasks"></div>           
+            <div class="main-todo-list__sort-button-wrapper">
+                <button class="main-todo-list__sort-button" data-action="sort" type="button">
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="main-todo-list__sort-button_img">
+                        <path d="M5 15L12 8L19 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> -->
+                </button>
+            </div>
+            <div class="main-todo-list__tasks-list" id="tasks"></div>         
+            <div class="main-todo-list__done-wrapper">
+                <h3 class="main-todo-list__title">DONE</h3>
+                <hr class="main-todo-list__hr">
+            </div>
+            <div class="main-todo-list__tasks-list" id="done-tasks"></div>         
             <!-- <div class="main-todo-list__todo-wrapper">
                 <h3 class="main-todo-list__title">TO DO</h3>
             </div>
@@ -108,10 +120,10 @@
                         </svg>
                 </button>
             </div>     -->
-            <!-- <div class="main-todo-list__empty-wrapper">
+            <div class="main-todo-list__empty-wrapper">
                 <h1 class="main-todo-list__empty-title">to-do list is empty</h1>
                 <h2 class="main-todo-list__empty-subtitle">Add Task to create a list</h2>
-            </div> -->
+            </div>
             <div class="main-todo-list__task-wrapper">
                 <form class="main-todo-list__task-form" id="task-form">
                     <input type="text" id="add-task" class="main-todo-list__task-input">
