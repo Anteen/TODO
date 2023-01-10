@@ -31,7 +31,6 @@
                                         </svg>                                        
                                 </li>
                                 <li class="menu__link-title">Tasks</li>
-                                <!-- <li class="menu__link-task-counter"><span class="menu__link-task-counter_number">1</span></li> -->
                             </ul>
                         </li>
                         <li tabindex="3" class="menu__navigation">
@@ -83,14 +82,64 @@
     </section>
     <section class="main-todo-list">
         <div class="main-todo-list__container">
-            <div class="main-todo-list__sort-button-wrapper">
-                <button class="main-todo-list__sort-button" data-action="sort" type="button">
-                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="main-todo-list__sort-button_img">
-                        <path d="M5 15L12 8L19 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg> -->
-                </button>
+            <div class="main-todo-list__active-list-buttons-wrapper-unactive">
+                <div class="main-todo-list__change-all-wrapper">
+                    <div class="main-todo-list__accept-all-button-wrapper">
+                        <button class="main-todo-list__accept-all-button" data-action="acceptAll" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                            
+                        </button>
+                    </div>
+                    <div class="main-todo-list__delete-all-button-wrapper">
+                        <button class="main-todo-list__delete-all-button" data-action="deleteAll" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 14L12 12M12 12L14 10M12 12L10 10M12 12L14 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                            
+                        </button>
+                    </div>
+                </div>    
+                <input type="text" class="main-todo-list__tasks-search" placeholder="Search tasks...">
+                <div class="main-todo-list__sort-button-wrapper">
+                    <button class="main-todo-list__sort-button" data-action="sort" type="button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="main-todo-list__sort-button_img">
+                            <path d="M5 15L12 8L19 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </button>
+                </div>                        
             </div>
-            <div class="main-todo-list__tasks-list" id="tasks"></div>         
+            <!-- <div class="main-todo-list__sort-button-wrapper">
+                <button class="main-todo-list__sort-button" data-action="sort" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="main-todo-list__sort-button_img">
+                        <path d="M5 15L12 8L19 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </button>
+            </div> -->
+            <div class="main-todo-list__tasks-list" id="tasks">
+                <!-- <div id="${task.id}" class="main-todo-list__task-wrappper">
+                    <div class="main-todo-list__task">
+                        <input type="text" class="main-todo-list__edit-task-input">
+                        <button type="submit" class="main-todo-list__task-button_edit">Save</button>
+                    </div>
+                    <div class="main-todo-list__button-wrapper">
+                        <button class="main-todo-list__correct-button" data-action="correct">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.2322 5.23223L18.7678 8.76777M16.7322 3.73223C17.7085 2.75592 19.2915 2.75592 20.2678 3.73223C21.2441 4.70854 21.2441 6.29146 20.2678 7.26777L6.50006 21.0355H3.00006V17.4644L16.7322 3.73223Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                            
+                        </button>
+                        <button class="main-todo-list__complete-button" data-action="complete">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="main-todo-list__complete-button_img">
+                                <path d="M5 13L9 17L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </button>
+                        <button class="main-todo-list__delete-button" data-action="delete">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="main-todo-list__delete-button_img">
+                                <path d="M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                        
+                        </button>
+                    </div>
+                </div>     -->
+            </div>         
             <div class="main-todo-list__done-wrapper">
                 <h3 class="main-todo-list__title">DONE</h3>
                 <hr class="main-todo-list__hr">
@@ -126,7 +175,7 @@
             </div>
             <div class="main-todo-list__task-wrapper">
                 <form class="main-todo-list__task-form" id="task-form">
-                    <input type="text" id="add-task" class="main-todo-list__task-input">
+                    <input type="text" id="add-task" class="main-todo-list__task-input" required>
                     <button type="submit" class="main-todo-list__task-button">Add</button>
                 </form>
             </div>        
